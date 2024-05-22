@@ -15,7 +15,7 @@ class TestPrintFibonacci:
         sys.stdout = captured_out
         print_fibonacci(0)
         sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == '[]\n')
+        assert(captured_out.getvalue() == 'Enter a positive integer\n')
 
     def test_print_fibonacci_one(self):
         '''prints 0 when length = 1'''
