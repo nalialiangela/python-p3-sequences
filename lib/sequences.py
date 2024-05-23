@@ -1,18 +1,14 @@
 #!/usr/bin/env python3
-
 def print_fibonacci(length):
-    if length ==0:
-        print("Enter a positive integer.")
+    if length <= 0:
+        print("Enter a positive integer")
         return
-
-    fibonacci_sequence = []
-    a, b = 0, 1
-    for _ in range(length):
-        fibonacci_sequence.append(a)
-        a, b = b, a + b
     
-    print(fibonacci_sequence)
+    fib = [0, 1]
+    while len(fib) < length:
+        fib.append(fib[-1] + fib[-2])
+    
+    print(fib[:length])
 
-print_fibonacci(10) 
-print_fibonacci(0)
-pass
+# Example usage:
+print_fibonacci(10)  # Expected output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
